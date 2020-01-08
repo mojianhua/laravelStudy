@@ -65,4 +65,17 @@ Route::group(['prefix'=>'test'],function(){
 	Route::any('/test2', function () {
 		echo '当前test/test2';
 	});
+	# 控制器路由,Route::请求方式(路由表达式，控制器@方法)
+	Route::get('/test/testPhpInfo','TestController@test1');
+});
+
+
+Route::group(['prefix'=>'Admin'],function(){
+	# 控制器路由,Route::请求方式(路由表达式，控制器@方法,带'\'线指定目录)
+	Route::get('/index','Admin\IndexController@index');
+});
+
+Route::group(['prefix'=>'Home'],function(){
+	# 控制器路由,Route::请求方式(路由表达式，控制器@方法,带'\'线指定目录)
+	Route::get('/index','Home\IndexController@index');
 });
