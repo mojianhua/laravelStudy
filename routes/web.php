@@ -78,4 +78,8 @@ Route::group(['prefix'=>'Admin'],function(){
 Route::group(['prefix'=>'Home'],function(){
 	# 控制器路由,Route::请求方式(路由表达式，控制器@方法,带'\'线指定目录)
 	Route::get('/index','Home\IndexController@index');
+	Route::get('/test/add','Home\TestController@add');
+	Route::get('/test/del','Home\TestController@del');
+	Route::get('/test/update','Home\TestController@update');
+	Route::get('/test/select','Home\TestController@select');
 });
