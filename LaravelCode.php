@@ -17,3 +17,6 @@ php artisan route:list
 php artisan make:controller TestController
 如果需要分目录生成控制器(在admin文件夹里面生成IndexConroller控制器)
 php artisan make:conroller Admin/IndexConroller
+5、从csrf验证中排除路由
+5.1可在app\Http\Middleware\VerifyCsrfToken添加路由规则
+5.2或写'*'排除所有的验证

@@ -35,4 +35,14 @@ class ViewTestController extends Controller
     public function mainbody(){
         return view('home.viewTest.mainbody');
     }
+
+    //csrf验证页面
+    public function csrfweb(){
+        return view('home.viewTest.csrfweb');
+    }
+
+    //csrf页面提交
+    public function csrfsave(){
+        return '提交成功';
+    }
 }

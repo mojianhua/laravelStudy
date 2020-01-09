@@ -87,5 +87,8 @@ Route::group(['prefix'=>'Home'],function(){
     Route::get('/testView/test1','Home\ViewTestController@test1');
     Route::get('/testView/test2','Home\ViewTestController@test2');
     Route::get('/testView/mainbody','Home\ViewTestController@mainbody');
+    # csrf验证
+    Route::get('/testcsrf/csrfweb','Home\ViewTestController@csrfweb');
+    Route::post('/testcsrf/csrfsave','Home\ViewTestController@csrfsave')->name('csrfsave');
 });
 

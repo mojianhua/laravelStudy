@@ -12,6 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        //指定页面移除CSRF保护:
+//		'/Home/testcsrf/csrfsave',
+        //所有页面移除CSRF包含
+//        '*'
     ];
 }
