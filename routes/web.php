@@ -75,6 +75,7 @@ Route::group(['prefix'=>'Admin'],function(){
 	Route::get('/index','Admin\IndexController@index');
 });
 
+
 Route::group(['prefix'=>'Home'],function(){
 	# 控制器路由,Route::请求方式(路由表达式，控制器@方法,带'\'线指定目录)
 	Route::get('/index','Home\IndexController@index');
@@ -82,4 +83,9 @@ Route::group(['prefix'=>'Home'],function(){
 	Route::get('/test/del','Home\TestController@del');
 	Route::get('/test/update','Home\TestController@update');
 	Route::get('/test/select','Home\TestController@select');
+	# 模板学习
+    Route::get('/testView/test1','Home\ViewTestController@test1');
+    Route::get('/testView/test2','Home\ViewTestController@test2');
+    Route::get('/testView/mainbody','Home\ViewTestController@mainbody');
 });
+
