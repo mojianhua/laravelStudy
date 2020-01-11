@@ -16,7 +16,13 @@ php artisan route:list
 4、创建控制器(TestController未控制器名称)
 php artisan make:controller TestController
 如果需要分目录生成控制器(在admin文件夹里面生成IndexConroller控制器)
-php artisan make:conroller Admin/IndexConroller
+php artisan make:controller Admin/IndexController
 5、从csrf验证中排除路由
 5.1可在app\Http\Middleware\VerifyCsrfToken添加路由规则
 5.2或写'*'排除所有的验证
+6、创建model,Member是文件模型的名词
+php artisan make:model Member
+7、安装语音包
+7.1安装命令:composer require caouecs/laravel-lang:~3.0
+7.2将zh-CN文件包移到lang目录下
+7.3修改默认语音：进去app.php修改locale字段，改成zh-cn

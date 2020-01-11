@@ -90,5 +90,14 @@ Route::group(['prefix'=>'Home'],function(){
     # csrf验证
     Route::get('/testcsrf/csrfweb','Home\ViewTestController@csrfweb');
     Route::post('/testcsrf/csrfsave','Home\ViewTestController@csrfsave')->name('csrfsave');
+    # model的运用
+    Route::get('/Modeltest','Home\ModelTestController@Modeltest');
+    Route::get('/ModeltestAdd','Home\ModelTestController@ModeltestAdd');
+    Route::get('/ModeltestSelect','Home\ModelTestController@ModeltestSelect');
+    Route::get('/ModeltestUpdate','Home\ModelTestController@ModeltestUpdate');
+    Route::get('/ModeltestDel','Home\ModelTestController@ModeltestDel');
+    # 自动验证
+    Route::any('/ValidatesTestStudy','Home\ValidatesTestController@ValidatesTestStudy');
+
 });
 
