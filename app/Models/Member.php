@@ -13,7 +13,7 @@ class Member extends Model
     //关联模型操作create_at和updated_at字段
     public $timestamps = false;
     //定义$fillable属性，表示使用模型插入数据时，允许插入的字段
-    protected $fillable = ['mid','name','email','age'];
+    protected $fillable = ['mid','name','email','age','avatar'];
     //$guarded设置排除入库的字段。
 
 }

@@ -173,5 +173,10 @@ return [
         'time'                  => '时间',
         'available'             => '可用的',
         'size'                  => '大小',
+        # 自定义验证字段,对应字段
+        'captcha'               => '验证码',
     ],
+    # 自定义验证字段
+    # 如validation.captcha
+    'captcha' => '验证码错误',
 ];

@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh-cn',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
-
+        //验证码服务提供者
+        Mews\Captcha\CaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -227,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 		# 配置别名Facades
 		'Input' => Illuminate\Support\Facades\Input::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ],
 
 ];

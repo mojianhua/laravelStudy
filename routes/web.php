@@ -98,6 +98,10 @@ Route::group(['prefix'=>'Home'],function(){
     Route::get('/ModeltestDel','Home\ModelTestController@ModeltestDel');
     # 自动验证
     Route::any('/ValidatesTestStudy','Home\ValidatesTestController@ValidatesTestStudy');
+    #文件上传
+    Route::any('/UploadTestStudy','Home\UploadTestStudyController@UploadTestStudy');
+    #数据分页
+    Route::any('/FenyeTestStudy','Home\FenyeTestStudyController@FenyeTestStudy');
 
 });
 
