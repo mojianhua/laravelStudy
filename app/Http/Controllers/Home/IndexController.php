@@ -12,4 +12,10 @@ class IndexController extends Controller
     public function index(){
 		echo 'Home的Index';
 	}
+
+	// 路由跳转
+	public function redirectStudy(){
+		// return redirect('/Home/index');
+		return redirect('http://www.baidu.com');
+	}
 }

@@ -102,6 +102,10 @@ Route::group(['prefix'=>'Home'],function(){
     Route::any('/UploadTestStudy','Home\UploadTestStudyController@UploadTestStudy');
     #数据分页
     Route::any('/FenyeTestStudy','Home\FenyeTestStudyController@FenyeTestStudy');
-
+    #响应方式
+    Route::any('/ajaxStudy1','Home\AjaxStudyController@ajaxStudy1');
+    Route::any('/ajaxStudy2','Home\AjaxStudyController@ajaxStudy2');
+    # 跳转响应
+    Route::get('/redirectStudy','Home\IndexController@redirectStudy');
 });
 
