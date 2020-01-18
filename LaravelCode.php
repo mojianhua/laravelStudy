@@ -52,3 +52,29 @@
 	10.3:执行填充器文件：
 		php artisan db:seed --class=需要执行的种子文件名（如：php artisan db:seed --class=PaperTable）
 11、项目初始化
+	1、创建目录
+		composer create-project laravel/Laravel=5.6.* --prefer-dist ./
+	2、连接数据库修改
+		修改.env文件,生成app_key(php artisan key:generate)
+	3、修改语言包，参考第7点
+	4、修改时区：
+		在cofing\app.php里的timezone
+	5、删除默认文件
+		5.1:app/Http/Controllers/Auth/的目录
+		5.2:/database/migrations，默认的迁移文件
+		5.3:/database/seeds默认文件
+		5.4:resources/views/welcome.blade.php
+	6、关闭mysql的严格模式
+		编辑config\database.php,将strict变成false
+	7、安装debugbar工具条
+		7.1:安装命令：composer require barryvdh/laravel-debugbar --dev
+		7.2:修改app配置文件，providers和aliases
+		'providers' => [
+		   Barryvdh\Debugbar\ServiceProvider::class,
+		 ]
+		'aliases' => [
+		   'Debugbar' => Barryvdh\Debugbar\Facade::class,
+		 ]
+		 7.3:设置全局应用
+		 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+

@@ -65,6 +65,7 @@ return [
     |
     */
 
+    # 修改时间区
     'timezone' => 'UTC',
 
     /*
@@ -177,7 +178,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -229,6 +230,7 @@ return [
 		# 配置别名Facades
 		'Input' => Illuminate\Support\Facades\Input::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

@@ -51,7 +51,7 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
 			# strict 严格模式，建议关闭
-            'strict' => true,
+            'strict' => false,
             'engine' => null,
         ],
 
