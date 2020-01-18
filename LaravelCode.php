@@ -35,3 +35,20 @@
 	'Captcha' => Mews\Captcha\Facades\Captcha::class,
 8.3.设置一个配置
 	php artisan vendor:publish
+9、数据迁移
+	9.1：迁移文件存放在database\migrations
+	9.2：创建迁移文件
+		php artisan make:migration 迁移文件(如：php artisan make:migration create_paper_table)
+	9.3：如果第一次执行迁移文件,先创建迁移文件的记录数据表
+		php artisan migrate:install
+	9.4:执行文件，穿件数据表
+		php artisan migrate
+	9.5：回滚迁移操作：
+		php artisan migrate:rollback
+10、数据填充
+	10.1:放在database\seeds
+	10.2:创建填充器名：
+		php artisan make:seeder 填充名称（如：以上面paper为例，php artisan make:seeder PaperTableSeeder）
+	10.3:执行填充器文件：
+		php artisan db:seed --class=需要执行的种子文件名（如：php artisan db:seed --class=PaperTable）
+11、项目初始化
