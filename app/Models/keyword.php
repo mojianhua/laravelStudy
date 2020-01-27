@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Keyword extends Model
+{
+    protected $table = 'keyword';
+    //指定表里面的主键，如果不指定主键，默认是id,修饰词protected
+    protected $primaryKey = 'id';
+    //关联模型操作create_at和updated_at字段
+    public $timestamps = false;
+}

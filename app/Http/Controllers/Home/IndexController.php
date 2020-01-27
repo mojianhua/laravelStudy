@@ -97,4 +97,40 @@ class IndexController extends Controller
 		$val = Cache::get('key20');
 		var_dump($val);
 	}
+
+	//链表查询
+	public function lianbiaoStudy(){
+
+		//DB操作类
+		$data = DB::table('article as t1')->select('t1.id','t1.article_name','t2.author_name')
+		->leftJoin('author as t2','t1.author_id','=','t2.id')
+		->get();
+
+		//一对一模型操作
+		$data = \App\Models\Article::get();
+		foreach ($data as $key => $value) {
+			//其中$value->OneToOneAuthor->author_name是链表得到的，OneToOneAuthor是关联author表的方法，author_name是关联表的字段
+			// echo $value->id.'---'.'article_name---'.$value->article_name.'---author_name---'.$value->OneToOneAuthor->author_name.'<br/>';
+		}
+
+		//一对多
+		$data = \App\Models\Article::get();
+		foreach ($data as $key => $value) {
+			//其中$value->OneToOneAuthor->author_name是链表得到的，OneToOneAuthor是关联author表的方法，author_name是关联表的字段
+			// echo $value->id.'---'.'article_name---'.$value->article_name.'---comment---';
+			// 	foreach ($value->OneToManyComment as $key2 => $value2) {
+			// 		echo $value2->comment.';';
+			// 	}
+			// echo '<br/>';
+		}
+
+		//多对多
+		$data = \App\Models\Article::get();
+		foreach ($data as $key => $value) {
+			echo "当前的文章名称为：".$value->article_name.'关键词为：<br/>';
+			foreach ($value->MamyToManyKeyword as $k => $val) {
+				echo '&emsp;'.$val->keyword.'<br/>';
+			}
+		}
+	}
 }

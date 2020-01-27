@@ -111,5 +111,7 @@ Route::group(['prefix'=>'Home'],function(){
     Route::get('/sessionStudy','Home\IndexController@sessionStudy');
     # cache使用
     Route::get('/cacheStudy','Home\IndexController@cacheStudy');
+    # 链表查询
+    Route::get('/lianbiaoStudy','Home\IndexController@lianbiaoStudy');
 });
 
