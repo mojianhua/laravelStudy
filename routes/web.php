@@ -107,5 +107,9 @@ Route::group(['prefix'=>'Home'],function(){
     Route::any('/ajaxStudy2','Home\AjaxStudyController@ajaxStudy2');
     # 跳转响应
     Route::get('/redirectStudy','Home\IndexController@redirectStudy');
+    # session使用
+    Route::get('/sessionStudy','Home\IndexController@sessionStudy');
+    # cache使用
+    Route::get('/cacheStudy','Home\IndexController@cacheStudy');
 });
 
