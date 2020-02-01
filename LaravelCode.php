@@ -35,6 +35,7 @@
 	'Captcha' => Mews\Captcha\Facades\Captcha::class,
 8.3.设置一个配置
 	php artisan vendor:publish
+8.4.选8，生成配置文件
 9、数据迁移
 	9.1：迁移文件存放在database\migrations
 	9.2：创建迁移文件
