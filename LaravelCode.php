@@ -78,4 +78,11 @@
 		 ]
 		 7.3:设置全局应用
 		 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+12、创建中间件
+	12.1：创建中间件命令
+		php artisan make:middleware IsLogin
+	12.2：中间件文件路径
+		app\Http\Middleware
+	12.3：注册中间件文件
+		app\Http\Kernel.php
 
