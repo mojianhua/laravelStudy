@@ -85,4 +85,58 @@
 		app\Http\Middleware
 	12.3：注册中间件文件
 		app\Http\Kernel.php
+13、安装图片处理组件
+	13.1：安装组件
+		composer require intervention/image
+	13.2：配置
+		在config/app.php添加
+		providers=>[
+			Intervention\Image\ImageServiceProvider::class,
+		],
+		aliases[
+			'Image' => Intervention\Image\Facades\Image::class,
+		]
+	13.3：使用，
+		查看laravelBlog项目里面的ArticleController的upload方法
+14、markdown编辑器
+	14.1：安装
+		composer require graham-campbell/markdown
+	14.2：配置
+		providers=>[
+			GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+		],
+		aliases[
+			'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+		]
+	14.3：使用方法
+		查看laravelBlog项目里面的ArticleController的pre_mk方法
+15、阿里云oss(1.0)
+	15.1：安装
+		包源网址：http://packagist.p2hp.com/packages/johnlui/aliyun-oss
+		composer require johnlui/aliyun-oss:~1.0
+	15.2：配置
+		15.2.1：配置文件在config/alioss里
+		15.2.2：在.evn更新阿里云oss配置
+		15.2.3：oss类路径在App/Services/OSS;
+	15.3：使用方法
+		查看laravelBlog项目里面的ArticleController的upload方法
+16、七牛oss
+	16.1：安装
+		composer require "overtrue/laravel-filesystem-qiniu"
+	16.2：配置
+		providers=>[
+			Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
+		],
+		在config/filesystems.php
+		disks=>[
+			'qiniu' => [
+            'driver'     => 'qiniu',
+            'access_key' => env('QINIU_ACCESS_KEY', 'xxxxxxxxxxxxxxxx'),
+            'secret_key' => env('QINIU_SECRET_KEY', 'xxxxxxxxxxxxxxxx'),
+            'bucket'     => env('QINIU_BUCKET', 'test'),
+            'domain'     => env('QINIU_DOMAIN', 'xxx.clouddn.com'), // or host: https://xxxx.clouddn.com
+        ],
+		16.2.2：在.evn更新七牛配置
+	16.3：使用方法
+		查看laravelBlog项目里面的ArticleController的pre_mk方法
 
